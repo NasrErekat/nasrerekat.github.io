@@ -22,10 +22,9 @@ body {
   align-items: center;
   justify-content: center;
   color: #eee;
-  overflow: hidden;
 }
 
-/* حركة دخول */
+/* حركة الدخول */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -40,11 +39,11 @@ body {
 .card {
   width: 92%;
   max-width: 420px;
-  background: rgba(20,20,20,0.9);
-  border-radius: 22px;
-  padding: 32px 24px;
+  background: rgba(20,20,20,0.92);
+  border-radius: 24px;
+  padding: 34px 24px;
   text-align: center;
-  box-shadow: 0 0 60px rgba(255,215,100,0.08);
+  box-shadow: 0 0 70px rgba(255,215,120,0.08);
   animation: fadeUp 1.2s ease forwards;
 }
 
@@ -52,35 +51,36 @@ body {
 .avatar {
   width: 130px;
   height: 130px;
-  margin: 0 auto 18px;
+  margin: 0 auto 20px;
   border-radius: 50%;
-  background-image: url("avatar.jpg");
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 0 30px rgba(255,215,100,0.25);
+  object-fit: cover;
+  display: block;
+  box-shadow: 
+    0 0 25px rgba(255,215,120,0.25),
+    inset 0 0 10px rgba(255,255,255,0.05);
   animation: fadeUp 1s ease forwards;
 }
 
 /* الاسم */
 h1 {
   color: #d4b16a;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-weight: 600;
   margin-bottom: 6px;
 }
 
-/* العنوان */
+/* الوصف */
 .subtitle {
   font-size: 14px;
   opacity: 0.7;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 /* النص */
 .text {
   font-size: 15px;
   line-height: 1.9;
-  margin-bottom: 26px;
+  margin-bottom: 28px;
   opacity: 0.9;
 }
 
@@ -89,21 +89,22 @@ h1 {
   display: flex;
   gap: 14px;
   justify-content: center;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .buttons a {
   flex: 1;
-  padding: 12px 0;
-  border-radius: 14px;
+  padding: 13px 0;
+  border-radius: 16px;
   text-decoration: none;
   color: #d4b16a;
   border: 1px solid rgba(212,177,106,0.45);
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .buttons a:hover {
-  background: rgba(212,177,106,0.12);
+  background: rgba(212,177,106,0.15);
+  box-shadow: 0 0 15px rgba(212,177,106,0.25);
 }
 
 /* الفوتر */
@@ -118,7 +119,8 @@ footer {
 
 <div class="card">
 
-  <div class="avatar"></div>
+  <!-- الصورة -->
+  <img src="avatar.jpg" alt="THE SIGMA" class="avatar">
 
   <h1>THE SIGMA</h1>
   <div class="subtitle">مساحة صامتة</div>
@@ -134,7 +136,7 @@ footer {
     <a href="https://www.instagram.com/sigma.n.s" target="_blank">Instagram</a>
   </div>
 
-  <footer>© sigma — 2026</footer>
+  <footer>© THE SIGMA — 2026</footer>
 
 </div>
 
