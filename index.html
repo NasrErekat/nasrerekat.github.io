@@ -1,107 +1,129 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>نصر | مساحة هادئة</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Cairo', sans-serif;
-    }
-
     body {
       margin: 0;
       height: 100vh;
-      background: radial-gradient(circle at top, #1a1a1a, #000);
+      background: radial-gradient(circle at top, #111, #000);
       display: flex;
-      justify-content: center;
       align-items: center;
-      color: #eee;
+      justify-content: center;
+      font-family: 'Cairo', sans-serif;
+      color: #e0e0e0;
     }
 
     .card {
-      background: rgba(25, 25, 25, 0.9);
-      padding: 28px 22px;
-      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      padding: 36px 28px;
+      border-radius: 24px;
       text-align: center;
-      width: 280px;
-      box-shadow: 0 0 40px rgba(0,0,0,0.6);
-      animation: fadeIn 1.5s ease;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 0 50px rgba(0,0,0,0.85);
+      backdrop-filter: blur(6px);
+      animation: fadeIn 1.2s ease forwards;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* الصورة */
     .avatar {
-      width: 90px;
-      height: 90px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
-      margin: auto;
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 18px rgba(255,255,255,0.15);
+      margin: 0 auto 14px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(243,199,122,0.35);
+      animation: breathe 4s ease-in-out infinite;
     }
 
     .avatar img {
       width: 100%;
       height: 100%;
-      border-radius: 50%;
       object-fit: cover;
+      filter: contrast(1.1) brightness(0.9);
+    }
+
+    @keyframes breathe {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
     }
 
     h1 {
-      margin: 14px 0 6px;
-      font-size: 20px;
+      margin: 6px 0 6px;
+      color: #f3c77a;
+      font-size: 22px;
       font-weight: 600;
-      color: #f5f5f5;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 20px;
     }
 
     p {
-      font-size: 14px;
-      line-height: 1.7;
-      color: #bfbfbf;
-      margin: 0 0 18px;
+      font-size: 15px;
+      line-height: 1.9;
+      opacity: 0.9;
+      margin-bottom: 26px;
     }
 
-    .social {
+    .links {
       display: flex;
       justify-content: center;
-      gap: 18px;
+      gap: 28px;
     }
 
-    .social a {
-      color: #d4af37;
-      font-size: 20px;
-      transition: 0.3s;
+    .links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #f3c77a;
+      text-decoration: none;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      position: relative;
     }
 
-    .social a:hover {
-      transform: translateY(-4px);
-      color: #fff;
+    .links a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #f3c77a;
+      transition: width 0.3s ease;
+    }
+
+    .links a:hover::after {
+      width: 100%;
+    }
+
+    .links a:hover {
+      color: #ffd28a;
     }
 
     footer {
-      margin-top: 16px;
-      font-size: 11px;
-      color: #666;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      margin-top: 26px;
+      font-size: 12px;
+      opacity: 0.4;
     }
   </style>
 </head>
@@ -109,31 +131,37 @@
 <body>
 
   <div class="card">
+
+    <!-- الصورة -->
     <div class="avatar">
-      <!-- ضع صورتك هنا -->
-      <img src="https://i.imgur.com/8QfQK0R.png" alt="avatar">
+      <img src="avatar.png" alt="Nasr">
     </div>
 
+    <!-- الاسم -->
     <h1>نصر</h1>
+    <div class="subtitle">مساحة هادئة</div>
 
     <p>
-      مساحة هادئة<br>
-      هنا صوتي الشخصي<br>
-      مشاعر بلا ضجيج<br>
-      وأوقات لا تحتاج كلام
+      هنا موقعي الشخصي.<br>
+      أشارك ما لا يُقال،<br>
+      وأترك للأثر أن يتكلم.
     </p>
 
-    <div class="social">
-      <a href="https://www.instagram.com/sigma.n.s?igsh=eGVnYjlubHNyMDY0" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
+    <!-- الروابط -->
+    <div class="links">
+      <a href="https://www.instagram.com/sigma.n.s?igsh=eGVnYjlubHNyMDY0" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
       </a>
 
-      <a href="https://www.tiktok.com/@nasrerekat?_r=1&_t=ZS-92vch8VTcNU" target="_blank" aria-label="TikTok">
-        <i class="fab fa-tiktok"></i>
+      <a href="https://www.tiktok.com/@nasrerekat?_r=1&_t=ZS-92vch8VTcNU" target="_blank">
+        <i class="fab fa-tiktok"></i> TikTok
       </a>
     </div>
 
-    <footer>© 2026</footer>
+    <footer>
+      © 2026
+    </footer>
+
   </div>
 
 </body>
