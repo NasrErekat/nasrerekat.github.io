@@ -1,184 +1,111 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>THE SIGMA</title>
 
-<title>the Sigma | مساحة هادئة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-*{
-  box-sizing:border-box;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
 
-body{
-  margin:0;
-  min-height:100vh;
-  background:radial-gradient(circle at top,#1a1a1a,#050505);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:'Cairo',sans-serif;
-  color:#e0e0e0;
-}
+    body {
+      background: black;
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-/* دخول ناعم */
-@keyframes fade{
-  from{opacity:0;transform:translateY(18px)}
-  to{opacity:1;transform:translateY(0)}
-}
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
 
-.card{
-  background:rgba(255,255,255,0.045);
-  padding:32px 26px;
-  border-radius:22px;
-  width:92%;
-  max-width:360px;
-  text-align:center;
-  box-shadow:0 0 45px rgba(0,0,0,0.85);
-  backdrop-filter:blur(8px);
-  animation:fade 1.2s ease;
-}
+    /* صورة البداية */
+    .cover {
+      position: absolute;
+      inset: 0;
+      background: url('cover.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: opacity 2s ease;
+      z-index: 2;
+    }
 
-/* صورة */
-.avatar{
-  width:92px;
-  height:92px;
-  border-radius:50%;
-  margin:0 auto 14px;
-  overflow:hidden;
-  box-shadow:0 0 26px rgba(243,199,122,.35);
-}
+    .cover h1 {
+      letter-spacing: 4px;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
 
-.avatar img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+    .cover .line {
+      width: 60px;
+      height: 1px;
+      background: #777;
+      margin-bottom: 20px;
+    }
 
-h1{
-  margin:6px 0 4px;
-  font-size:19px;
-  color:#f3c77a;
-}
+    .cover p {
+      font-size: 1rem;
+      color: #aaa;
+      line-height: 1.8;
+    }
 
-.subtitle{
-  font-size:12.5px;
-  opacity:.65;
-  margin-bottom:16px;
-}
-
-p{
-  font-size:13.5px;
-  line-height:1.9;
-  opacity:.9;
-  margin-bottom:18px;
-}
-
-/* فيديو */
-.video-box{
-  margin:18px 0;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 0 30px rgba(0,0,0,.75);
-}
-
-.video-box video{
-  width:100%;
-  display:block;
-  filter:brightness(.92) contrast(1.05);
-}
-
-/* روابط */
-.links{
-  display:flex;
-  justify-content:center;
-  gap:28px;
-  font-size:15px;
-}
-
-.links a{
-  color:#f3c77a;
-  text-decoration:none;
-  opacity:.85;
-}
-
-.links a:hover{
-  opacity:1;
-}
-
-footer{
-  margin-top:18px;
-  font-size:10.5px;
-  opacity:.35;
-}
-</style>
+    /* الفيديو */
+    video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 2s ease;
+      z-index: 1;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
 
-<div class="card">
+    <!-- الغلاف -->
+    <div class="cover" id="cover">
+      <h1>THE SIGMA</h1>
+      <div class="line"></div>
+      <p>
+        🎞️ مشاهد بصمت<br>
+        🖤 إحساس بدون شرح<br>
+        ⏳ كل لحظة حكاية
+      </p>
+    </div>
 
-  <div class="avatar">
-    <img src="avatar.png" alt="the Sigma">
+    <!-- الفيديو -->
+    <video id="video" src="video.mp4" muted loop playsinline></video>
+
   </div>
 
-  <h1>the Sigma</h1>
-  <div class="subtitle">مساحة هادئة</div>
+  <script>
+    const cover = document.getElementById("cover");
+    const video = document.getElementById("video");
 
-  <p>
-    هنا موقعي الشخصي.<br>
-    أشارك ما لا يُقال،<br>
-    وأترك للأثر أن يتكلم.
-  </p>
-
-  <div class="video-box">
-    <video id="sigmaVideo"
-           autoplay
-           loop
-           muted
-           playsinline
-           preload="auto">
-      <source src="video.mp4" type="video/mp4">
-      متصفحك لا يدعم الفيديو
-    </video>
-  </div>
-
-  <div class="links">
-    <a href="https://www.instagram.com/sigma.n.s" target="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.tiktok.com/@nasrerekat" target="_blank">
-      <i class="fab fa-tiktok"></i>
-    </a>
-  </div>
-
-  <footer>© 2026</footer>
-
-</div>
-
-<script>
-const video = document.getElementById("sigmaVideo");
-
-/* مستوى الصوت (خفيف جدًا) */
-video.volume = 0.08;
-
-/* أول تفاعل فقط */
-function enableSound() {
-  video.muted = false;
-  video.play();
-  document.removeEventListener("touchstart", enableSound);
-  document.removeEventListener("click", enableSound);
-}
-
-/* للجوال */
-document.addEventListener("touchstart", enableSound);
-/* للكمبيوتر */
-document.addEventListener("click", enableSound);
-</script>
-
+    // بعد 3 ثواني
+    setTimeout(() => {
+      cover.style.opacity = "0";
+      video.style.opacity = "1";
+      video.play();
+    }, 3000);
+  </script>
 </body>
 </html>
