@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE SIGMA</title>
+<title>sigma | مساحة هادئة</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 *{
@@ -16,62 +17,80 @@
 }
 
 body{
-  background:black;
-  color:white;
-  height:100vh;
-  overflow:hidden;
-}
-
-/* Video Background */
-video{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(0.35);
-  z-index:-1;
-}
-
-/* Content */
-.container{
-  height:100vh;
+  min-height:100vh;
+  background:radial-gradient(circle at top, #1a1a1a, #000);
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
-  animation:fade 2.5s ease;
+  color:#ddd;
 }
 
+/* Card */
+.card{
+  background:rgba(20,20,20,0.75);
+  backdrop-filter:blur(10px);
+  width:320px;
+  padding:30px 25px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 0 40px rgba(0,0,0,0.6);
+  animation:fade 1.8s ease;
+}
+
+/* Avatar */
+.avatar{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  margin:0 auto 15px;
+  background:url("avatar.png") center/cover no-repeat;
+  box-shadow:0 0 25px rgba(255,215,140,0.2);
+}
+
+/* Text */
 h1{
-  letter-spacing:4px;
-  font-size:38px;
-  margin-bottom:20px;
+  font-size:20px;
+  font-weight:700;
+  color:#d4b47c;
+  margin-bottom:5px;
+}
+
+.subtitle{
+  font-size:14px;
+  opacity:0.7;
+  margin-bottom:15px;
 }
 
 p{
-  opacity:0.8;
-  line-height:1.8;
-  margin-bottom:35px;
+  font-size:14px;
+  line-height:1.9;
+  opacity:0.85;
+  margin-bottom:22px;
 }
 
-/* Buttons */
-.links a{
-  display:block;
-  width:220px;
-  margin:12px auto;
-  padding:12px;
-  border:1px solid rgba(255,255,255,0.4);
+/* Icons */
+.social{
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  margin-bottom:15px;
+}
+
+.social a{
+  color:#d4b47c;
+  font-size:20px;
+  transition:0.3s;
+}
+
+.social a:hover{
   color:white;
-  text-decoration:none;
-  transition:0.4s;
-  letter-spacing:1px;
+  transform:scale(1.15);
 }
 
-.links a:hover{
-  background:white;
-  color:black;
+/* Footer */
+footer{
+  font-size:12px;
+  opacity:0.4;
 }
 
 /* Animation */
@@ -84,32 +103,28 @@ p{
 
 <body>
 
-<video autoplay muted loop playsinline>
-  <source src="video.mp4" type="video/mp4">
-</video>
+<div class="card">
+  <div class="avatar"></div>
 
-<script>
-document.addEventListener("click", () => {
-  const v = document.querySelector("video");
-  v.muted = false;
-  v.volume = 0.08;
-});
-</script>
+  <h1>sigma</h1>
+  <div class="subtitle">مساحة هادئة</div>
 
-<div class="container">
-  <div>
-    <h1>THE SIGMA</h1>
-    <p>
-      🎞️ مشاهد بصمت<br>
-      🖤 إحساس بدون شرح<br>
-      ⏳ كل لحظة حكاية
-    </p>
+  <p>
+    هنا موقعي الشخصي.<br>
+    أشارك ما لا يُقال،<br>
+    وأترك للأثر أن يتكلم.
+  </p>
 
-    <div class="links">
-      <a href="https://www.tiktok.com/@nasrerekat" target="_blank">TikTok</a>
-      <a href="https://www.instagram.com/sigma.n.s" target="_blank">Instagram</a>
-    </div>
+  <div class="social">
+    <a href="https://www.instagram.com/sigma.n.s" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@nasrerekat" target="_blank">
+      <i class="fab fa-tiktok"></i>
+    </a>
   </div>
+
+  <footer>© 2026</footer>
 </div>
 
 </body>
