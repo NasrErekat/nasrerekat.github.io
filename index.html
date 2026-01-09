@@ -2,59 +2,109 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>موقعي الشخصي</title>
+<title>نصر | موقع شخصي</title>
+
+<!-- خط أنيق -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(180deg, #0f0f0f, #1b1b1b);
+  font-family: 'Cairo', sans-serif;
+  background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial, sans-serif;
   color: #eee;
+  overflow: hidden;
+}
+
+/* حركة دخول ناعمة */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .card {
   background: rgba(255,255,255,0.04);
-  padding: 40px;
-  border-radius: 18px;
+  backdrop-filter: blur(8px);
+  padding: 45px 40px;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 0 40px rgba(0,0,0,0.6);
-  max-width: 500px;
+  max-width: 420px;
+  width: 90%;
+  animation: fadeUp 1.2s ease;
+  box-shadow:
+    0 0 40px rgba(0,0,0,0.7),
+    inset 0 0 40px rgba(255,255,255,0.02);
 }
 
 h1 {
-  color: #f2c57c;
-  margin-bottom: 10px;
+  margin: 0;
+  font-weight: 600;
+  color: #f3c77a;
+  letter-spacing: 1px;
 }
 
 p {
-  line-height: 1.7;
+  margin: 18px 0 30px;
+  line-height: 1.9;
+  font-size: 15px;
   opacity: 0.85;
 }
 
-a {
-  color: #f2c57c;
+.links a {
+  display: inline-block;
+  margin: 0 12px;
+  padding-bottom: 4px;
+  font-size: 14px;
+  color: #f3c77a;
   text-decoration: none;
-  margin: 0 10px;
+  position: relative;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background: #f3c77a;
+  transition: width 0.3s ease;
+}
+
+.links a:hover::after {
+  width: 100%;
 }
 </style>
 </head>
 
 <body>
-  <div class="card">
-    <h1>مرحبًا، أنا نصر</h1>
-    <p>
-      هذا موقعي الشخصي.<br>
-      مساحة بسيطة تعكس أفكاري واهتمامي.
-    </p>
 
-    <div>
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-    </div>
+<div class="card">
+  <h1>مرحبًا، أنا نصر</h1>
+  <p>
+    هذا موقعي الشخصي.<br>
+    مساحة هادئة تعكس أفكاري واهتمامي.
+  </p>
+
+  <div class="links">
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
   </div>
+</div>
+
 </body>
 </html>
